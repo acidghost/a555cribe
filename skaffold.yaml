@@ -1,0 +1,23 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: a555cribe
+build:
+  artifacts:
+    - image: git.squik.casa/acidghost/a555cribe
+      docker:
+        dockerfile: Dockerfile
+  platforms:
+    - linux/amd64
+  tagPolicy:
+    gitCommit: {}
+manifests:
+  rawYaml:
+    - deployment.yaml
+deploy:
+  kubectl:
+    defaultNamespace: a555cribe-dev
+portForward:
+  - resourceType: service
+    resourceName: a555cribe
+    port: 8000
