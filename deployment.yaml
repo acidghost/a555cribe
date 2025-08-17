@@ -35,7 +35,7 @@ spec:
           env:
             - name: A555CRIBE_PORT
               value: "8000"
-            - name: A555CRIBE_MODEL_SIZE
+            - name: A555CRIBE_MODEL
               value: small
           ports:
             - name: http

@@ -12,8 +12,8 @@ async def transcribe_api(file: UploadFile = File(...)):
     if file.content_type is not None and not file.content_type.startswith("audio/"):
         raise HTTPException(status_code=400, detail="Uploaded file is not audio")
 
-    model = cast(WhisperModel, app.extra["model"])
-    segments, info = model.transcribe(io.BytesIO(file.file.read()), beam_size=5)
+    whisper = cast(WhisperModel, app.extra["whisper"])
+    segments, info = whisper.transcribe(io.BytesIO(file.file.read()), beam_size=5)
 
     return {
         "language": info.language,
