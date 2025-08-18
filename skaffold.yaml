@@ -4,7 +4,7 @@ metadata:
   name: a555cribe
 build:
   artifacts:
-    - image: git.squik.casa/acidghost/a555cribe
+    - image: a555cribe
       docker:
         dockerfile: Dockerfile
   platforms:
