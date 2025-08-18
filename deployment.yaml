@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: a555cribe
-          image: git.squik.casa/acidghost/a555cribe
+          image: a555cribe
           env:
             - name: A555CRIBE_PORT
               value: "8000"
