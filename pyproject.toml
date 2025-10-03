@@ -28,6 +28,9 @@ a555cribe = "a555cribe:cli"
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
+[tool.uv]
+required-version = "0.8.11"
+
 [tool.ruff.lint]
 select = [
     "E",
