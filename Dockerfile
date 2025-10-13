@@ -1,5 +1,5 @@
 FROM ghcr.io/astral-sh/uv:0.8.11@sha256:8101ad825250a114e7bef89eefaa73c31e34e10ffbe5aff01562740bac97553c AS uv
-FROM docker.io/library/python:3.13.7-slim-trixie@sha256:8220ccec22e88cddd9a541cacd1bf48423bda8cdeb1015249e4b298edf86cdc7
+FROM docker.io/library/python:3.14.0-slim-trixie@sha256:5cfac249393fa6c7ebacaf0027a1e127026745e603908b226baa784c52b9d99b
 COPY --from=uv /uv /uvx /bin/
 RUN useradd -u 1000 scribe && mkdir /cache && chown scribe:scribe /cache
 WORKDIR /app
